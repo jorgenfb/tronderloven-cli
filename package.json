@@ -1,0 +1,22 @@
+{
+  "name": "tronderloven-cli",
+  "version": "1.0.0",
+  "description": "Command line utility to list trønderloven quotes from stusselig.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+	"tronderloven": "./index.js"
+  },
+  "keywords": [
+    "Trønderloven",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/jorgenfb/tronderloven-cli"
+  },
+  "author": "Jørgen Borgesen",
+  "license": "ISC"
+}
