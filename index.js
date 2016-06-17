@@ -1,27 +1,10 @@
 #!/usr/bin/env node
 
-var http = require('http');
+var data = require('./data.json');
 
-var request = http.get('http://www.stusselig.com/quote/random', function(response){
-  	response.setEncoding('utf8');
+function randomQuote() {
+	var index = Math.floor(data.length * Math.random());
+	return data[index];
+}
 
-	var chunks = [];
-	response.on('data', function(chunk) {
-		chunks.push(chunk);
-	});
-
-	response.on('end', function() {
-		var body = chunks.join();
-
-		try {
-			console.log(JSON.parse(body).text);
-		} catch(e) {
-			console.log(e);
-		}
-	});
-});
-
-request.on('error', function(e) {
-	console.log(e);
-});
-
+console.log(randomQuote());
