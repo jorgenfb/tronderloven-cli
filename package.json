@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-	"tronderloven": "./index.js"
+    "tronderloven": "./index.js"
   },
   "keywords": [
     "Trønderloven",
@@ -15,8 +15,11 @@
   ],
   "repository": {
     "type": "git",
-	"url": "https://github.com/jorgenfb/tronderloven-cli"
+    "url": "https://github.com/jorgenfb/tronderloven-cli"
   },
   "author": "Jørgen Borgesen",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
