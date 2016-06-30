@@ -3,6 +3,7 @@
 var program = require('commander');
 var data = require('./data.json');
 var readline = require('readline');
+var path = require('path');
 var fs = require('fs');
 
 program
@@ -11,7 +12,8 @@ program
 	.parse(process.argv);
 
 if (program.interactive) {
-	var banner = fs.readFileSync('banner.txt', 'utf8');
+	var bannerPath = path.join(__dirname, 'banner.txt');
+	var banner = fs.readFileSync(bannerPath, 'utf8');
 	console.log(banner);
 
 	var rl = readline.createInterface({
