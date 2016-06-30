@@ -3,6 +3,7 @@
 var program = require('commander');
 var data = require('./data.json');
 var readline = require('readline');
+var fs = require('fs');
 
 program
 	.option('-n, --number <n>', 'Number of quotes to print', parseInt)
@@ -10,6 +11,9 @@ program
 	.parse(process.argv);
 
 if (program.interactive) {
+	var banner = fs.readFileSync('banner.txt', 'utf8');
+	console.log(banner);
+
 	var rl = readline.createInterface({
 		input: process.stdin,
 		output: process.stdout
@@ -21,7 +25,7 @@ if (program.interactive) {
 	}
 
 	function ask() {
-		rl.question(randomQuote(), function() {
+		rl.question('- ' + randomQuote(), function() {
 			ask();
 		});
 	}
